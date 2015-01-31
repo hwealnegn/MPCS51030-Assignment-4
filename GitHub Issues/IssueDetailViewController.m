@@ -21,6 +21,13 @@
     self.author.text = [self.currentIssue valueForKeyPath:@"user.login"];
     self.date.text = [self.currentIssue objectForKey:@"created_at"];
     
+    // References to display user avatar:
+    // http://stackoverflow.com/questions/16481166/xcode-string-url-to-image
+    // http://stackoverflow.com/questions/6456605/nsstring-to-nsurl
+    NSURL *url = [NSURL URLWithString:[self.currentIssue valueForKeyPath:@"user.avatar_url"]];
+    NSLog(@"%@", [self.currentIssue valueForKeyPath:@"user.avatar_url"]);
+    NSData *data = [NSData dataWithContentsOfURL: url];
+    self.authorImage.image = [UIImage imageWithData: data];
 }
 
 - (void)didReceiveMemoryWarning {

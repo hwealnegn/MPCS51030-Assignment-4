@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *issueTitle;
 @property (weak, nonatomic) IBOutlet UILabel *author;
 @property (weak, nonatomic) IBOutlet UILabel *date;
+@property (weak, nonatomic) IBOutlet UIImageView *authorImage;
 
 @end
