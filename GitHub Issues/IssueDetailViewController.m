@@ -16,7 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.issueTitle.text = [self.currentIssue objectForKey:@"title"];
+    self.author.text = [self.currentIssue valueForKeyPath:@"user.login"];
+    self.date.text = [self.currentIssue objectForKey:@"created_at"];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +37,8 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+/*- (IBAction)moreDetails:(id)sender {
+}*/
 
 @end

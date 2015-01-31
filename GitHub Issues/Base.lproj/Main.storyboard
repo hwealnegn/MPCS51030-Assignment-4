@@ -50,6 +50,7 @@
                                     <outlet property="date" destination="iMG-gi-8h4" id="t9K-Uc-iZP"/>
                                     <outlet property="statusImage" destination="p9X-we-f73" id="j6J-Zm-4Fg"/>
                                     <outlet property="title" destination="CcK-Kg-hG6" id="TY3-dN-gpM"/>
+                                    <segue destination="hpC-IU-V0N" kind="push" identifier="segueIssueDetails" id="pAZ-JU-eFB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -59,9 +60,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Open Issues" id="Bg5-ce-Vsi"/>
-                    <connections>
-                        <segue destination="hpC-IU-V0N" kind="push" id="XIq-Zx-hqn"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dOM-Qa-7Xv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -75,26 +73,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="2mW-kf-Y1Y">
-                                <rect key="frame" x="112" y="205" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Issue Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="53c-X6-yHF">
-                                <rect key="frame" x="16" y="363" width="343" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Issue Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PU8-F5-sct">
+                                <rect key="frame" x="16" y="252" width="343" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="github username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4yn-He-u2z">
-                                <rect key="frame" x="16" y="413" width="343" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jOl-o8-8Wk">
+                                <rect key="frame" x="16" y="407" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZUs-WN-sgI">
-                                <rect key="frame" x="16" y="442" width="343" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3IF-lK-H2q">
+                                <rect key="frame" x="16" y="436" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -103,19 +97,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="oeg-e0-50Z">
-                        <barButtonItem key="rightBarButtonItem" title="More Details" id="67V-Iu-NGP"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="oeg-e0-50Z"/>
                     <connections>
-                        <outlet property="author" destination="4yn-He-u2z" id="XrT-yn-F8f"/>
-                        <outlet property="date" destination="ZUs-WN-sgI" id="sla-fe-8wa"/>
-                        <outlet property="statusImage" destination="2mW-kf-Y1Y" id="JUS-Ze-PIq"/>
-                        <outlet property="title" destination="53c-X6-yHF" id="NRz-xv-5fp"/>
+                        <outlet property="author" destination="jOl-o8-8Wk" id="def-Kd-xuA"/>
+                        <outlet property="date" destination="3IF-lK-H2q" id="26e-s0-Bcp"/>
+                        <outlet property="issueTitle" destination="PU8-F5-sct" id="F1t-Yc-6de"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="twz-LA-V0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1486.5" y="-449.5"/>
+            <point key="canvasLocation" x="1504.5" y="-449.5"/>
         </scene>
         <!--All Issues-->
         <scene sceneID="s5C-F8-khr">

@@ -8,6 +8,7 @@
 
 #import "IssueTableViewController.h"
 #import "IssueTableViewCell.h"
+#import "IssueDetailViewController.h"
 
 @interface IssueTableViewController ()
 
@@ -61,12 +62,6 @@
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -139,14 +134,18 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"segueIssueDetails"]){
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSDictionary *issue = [self.issueData objectAtIndex:indexPath.row];
+        IssueDetailViewController *issueDetails = [segue destinationViewController];
+        [issueDetails setCurrentIssue:issue];
+    }
 }
-*/
 
 @end
