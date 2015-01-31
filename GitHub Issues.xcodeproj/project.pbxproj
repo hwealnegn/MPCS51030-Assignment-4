@@ -21,6 +21,10 @@
 		3B9F24591A7C595D00FE065E /* topic-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B9F24561A7C595D00FE065E /* topic-50.png */; };
 		3B9F24601A7C614B00FE065E /* IssueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F245F1A7C614B00FE065E /* IssueTableViewCell.m */; };
 		3B9F24631A7C70AE00FE065E /* IssueDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F24621A7C70AE00FE065E /* IssueDetailViewController.m */; };
+		3BACEC801A7D75C70088E5AA /* question-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BACEC7E1A7D75C70088E5AA /* question-50.png */; };
+		3BACEC811A7D75C70088E5AA /* cool-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BACEC7F1A7D75C70088E5AA /* cool-50.png */; };
+		3BACEC841A7D85BC0088E5AA /* question-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BACEC821A7D85BC0088E5AA /* question-100.png */; };
+		3BACEC851A7D85BC0088E5AA /* cool-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BACEC831A7D85BC0088E5AA /* cool-100.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,10 @@
 		3B9F245F1A7C614B00FE065E /* IssueTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueTableViewCell.m; sourceTree = "<group>"; };
 		3B9F24611A7C70AE00FE065E /* IssueDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueDetailViewController.h; sourceTree = "<group>"; };
 		3B9F24621A7C70AE00FE065E /* IssueDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueDetailViewController.m; sourceTree = "<group>"; };
+		3BACEC7E1A7D75C70088E5AA /* question-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "question-50.png"; sourceTree = "<group>"; };
+		3BACEC7F1A7D75C70088E5AA /* cool-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cool-50.png"; sourceTree = "<group>"; };
+		3BACEC821A7D85BC0088E5AA /* question-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "question-100.png"; sourceTree = "<group>"; };
+		3BACEC831A7D85BC0088E5AA /* cool-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cool-100.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,10 +114,10 @@
 				3B9F245F1A7C614B00FE065E /* IssueTableViewCell.m */,
 				3B9F244B1A7C555300FE065E /* IssueTableViewController.h */,
 				3B9F244C1A7C555300FE065E /* IssueTableViewController.m */,
-				3B9F24611A7C70AE00FE065E /* IssueDetailViewController.h */,
-				3B9F24621A7C70AE00FE065E /* IssueDetailViewController.m */,
 				3B9F244E1A7C556300FE065E /* AllIssueTableViewController.h */,
 				3B9F244F1A7C556300FE065E /* AllIssueTableViewController.m */,
+				3B9F24611A7C70AE00FE065E /* IssueDetailViewController.h */,
+				3B9F24621A7C70AE00FE065E /* IssueDetailViewController.m */,
 				3B9F24511A7C557900FE065E /* CircleViewController.h */,
 				3B9F24521A7C557900FE065E /* CircleViewController.m */,
 				3B9F24321A7C4CB200FE065E /* Images.xcassets */,
@@ -122,6 +130,10 @@
 		3B9F24221A7C4CB200FE065E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3BACEC821A7D85BC0088E5AA /* question-100.png */,
+				3BACEC831A7D85BC0088E5AA /* cool-100.png */,
+				3BACEC7E1A7D75C70088E5AA /* question-50.png */,
+				3BACEC7F1A7D75C70088E5AA /* cool-50.png */,
 				3B9F24541A7C595D00FE065E /* doughnut_chart-50.png */,
 				3B9F24551A7C595D00FE065E /* popular_topic-50.png */,
 				3B9F24561A7C595D00FE065E /* topic-50.png */,
@@ -233,7 +245,11 @@
 				3B9F24581A7C595D00FE065E /* popular_topic-50.png in Resources */,
 				3B9F24361A7C4CB200FE065E /* LaunchScreen.xib in Resources */,
 				3B9F24591A7C595D00FE065E /* topic-50.png in Resources */,
+				3BACEC841A7D85BC0088E5AA /* question-100.png in Resources */,
+				3BACEC851A7D85BC0088E5AA /* cool-100.png in Resources */,
+				3BACEC811A7D75C70088E5AA /* cool-50.png in Resources */,
 				3B9F24331A7C4CB200FE065E /* Images.xcassets in Resources */,
+				3BACEC801A7D75C70088E5AA /* question-50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

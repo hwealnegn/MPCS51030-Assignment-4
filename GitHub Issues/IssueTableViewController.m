@@ -30,7 +30,7 @@
     // Create NSUrlSession
     NSURLSession *session = [NSURLSession sharedSession];
     
-    // Create data download taks
+    // Create data download tasks
     [[session dataTaskWithURL:[NSURL URLWithString:url]
             completionHandler:^(NSData *data,NSURLResponse *response,NSError *error) {
                 
@@ -95,12 +95,13 @@
     cell.author.text = [[self.issueData objectAtIndex:indexPath.row] valueForKeyPath:@"user.login"];
     cell.date.text = [[self.issueData objectAtIndex:indexPath.row] objectForKey:@"created_at"];
     
-    /*if (strcmp([[self.issueData objectAtIndex:indexPath.row] objectForKey:@"status"], @"open")) {
-        //cell.statusImage.image = "question-50.png";
-    } else {
-        
-    }*/
-    
+    NSString *status = [[self.issueData objectAtIndex:indexPath.row] objectForKey:@"state"];
+    if ([status isEqualToString:@"open"]) {
+        cell.statusImage.image = [UIImage imageNamed:@"question-100.png"];
+    }
+    else if ([status isEqualToString:@"closed"]) {
+        cell.statusImage.image = [UIImage imageNamed:@"cool-100.png"];
+    }
     return cell;
 }
 
