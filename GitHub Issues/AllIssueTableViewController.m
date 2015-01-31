@@ -8,6 +8,7 @@
 
 #import "AllIssueTableViewController.h"
 #import "IssueTableViewCell.h"
+#import "IssueDetailViewController.h"
 
 @interface AllIssueTableViewController ()
 
@@ -133,14 +134,19 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"segueIssueDetails"]){
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSDictionary *issue = [self.issueData objectAtIndex:indexPath.row];
+        IssueDetailViewController *issueDetails = [segue destinationViewController];
+        [issueDetails setCurrentIssue:issue];
+    }
 }
-*/
+
 
 @end

@@ -159,6 +159,7 @@
                                     <outlet property="date" destination="zyD-Pe-KIa" id="eq5-wN-nUZ"/>
                                     <outlet property="statusImage" destination="oZb-m4-XVt" id="UB1-bh-8dB"/>
                                     <outlet property="title" destination="QWk-7I-EsR" id="eqY-sK-gAc"/>
+                                    <segue destination="hpC-IU-V0N" kind="push" identifier="segueIssueDetails" id="gPl-r0-oBi"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -254,4 +255,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="gPl-r0-oBi"/>
+    </inferredMetricsTieBreakers>
 </document>
