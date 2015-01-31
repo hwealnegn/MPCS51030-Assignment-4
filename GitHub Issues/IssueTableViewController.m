@@ -7,6 +7,7 @@
 //
 
 #import "IssueTableViewController.h"
+#import "IssueTableViewCell.h"
 
 @interface IssueTableViewController ()
 
@@ -38,7 +39,7 @@
                                                                  options:NSJSONReadingAllowFragments
                                                                    error:&jsonError];
                 // Log the data for debugging
-                NSLog(@"DownloadeData:%@",self.issueData);
+                NSLog(@"DownloadedData:%@",self.issueData);
                 
                 // Use dispatch_async to update the table on the main thread
                 // Remember that NSURLSession is downloading in the background
@@ -52,6 +53,8 @@
     [super viewDidLoad];
     
     [self loadData];
+    
+    self.issueData = [[NSMutableArray alloc] init];
     
     // Add UIRefreshControl
     // Reference: http://stackoverflow.com/questions/12607015/uirefreshcontrol-ios-6-xcode
@@ -74,21 +77,29 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.issueData count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IssueCell" forIndexPath:indexPath];
+    IssueTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IssueCell" forIndexPath:indexPath];
     
     // Configure the cell...
+    NSLog(@"Working on cell:%ld", (long)indexPath.row);
+    cell.title.text = [[self.issueData objectAtIndex:indexPath.row] objectForKey:@"title"];
+    cell.author.text = [[self.issueData objectAtIndex:indexPath.row] valueForKeyPath:@"user.login"];
+    cell.date.text = [[self.issueData objectAtIndex:indexPath.row] objectForKey:@"created_at"];
+    
+    /*if (strcmp([[self.issueData objectAtIndex:indexPath.row] objectForKey:@"status"], @"open")) {
+        //cell.statusImage.image = "question-50.png";
+    } else {
+        
+    }*/
     
     return cell;
 }

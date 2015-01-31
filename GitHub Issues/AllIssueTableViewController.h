@@ -10,4 +10,6 @@
 
 @interface AllIssueTableViewController : UITableViewController
 
+@property (strong, nonatomic) NSMutableArray *issueData;
+
 @end
