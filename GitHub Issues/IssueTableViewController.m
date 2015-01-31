@@ -20,10 +20,38 @@
     NSLog(@"Refreshed");
     
     [self.refreshControl endRefreshing];
-};
+}
+
+- (void)loadData {
+    // GitHub API url
+    NSString *url = @"https://api.github.com/repos/uchicago-mobi/2015-Winter-Forum/issues?state=open";
+    
+    // Create NSUrlSession
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    // Create data download taks
+    [[session dataTaskWithURL:[NSURL URLWithString:url]
+            completionHandler:^(NSData *data,NSURLResponse *response,NSError *error) {
+                
+                NSError *jsonError;
+                self.issueData = [NSJSONSerialization JSONObjectWithData:data
+                                                                 options:NSJSONReadingAllowFragments
+                                                                   error:&jsonError];
+                // Log the data for debugging
+                NSLog(@"DownloadeData:%@",self.issueData);
+                
+                // Use dispatch_async to update the table on the main thread
+                // Remember that NSURLSession is downloading in the background
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.tableView reloadData];
+                });
+            }] resume];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self loadData];
     
     // Add UIRefreshControl
     // Reference: http://stackoverflow.com/questions/12607015/uirefreshcontrol-ios-6-xcode

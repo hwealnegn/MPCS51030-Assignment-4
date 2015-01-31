@@ -17,6 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // Add UIRefreshControl
+    // Reference: http://stackoverflow.com/questions/12607015/uirefreshcontrol-ios-6-xcode
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -43,15 +49,13 @@
     return 0;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IssueCell" forIndexPath:indexPath];
     
     // Configure the cell...
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
