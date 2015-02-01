@@ -28,7 +28,7 @@
     CGContextClosePath(ctx);
     
     // DRAW RECTANGLE?
-    CGContextBeginPath(ctx);
+    /*CGContextBeginPath(ctx);
     
     float rectangleWidth = self.openIssues * 100;
     float rectangleHeight = 100.0;
@@ -38,7 +38,7 @@
     CGContextSetRGBStrokeColor(ctx, 0.0, 0.0, 1.0, 1.0);
     CGContextStrokePath(ctx);
     
-    NSLog(@"Hello, this is: %ld", (long)self.openIssues);
+    NSLog(@"Hello, this is: %ld", (long)self.openIssues);*/
 }
 
 /*!
