@@ -21,6 +21,7 @@
 - (void)refreshTable {
     NSLog(@"Refreshing");
     [self loadData];
+    //[self.tableView reloadData];
     [self.refreshControl endRefreshing];
 }
 

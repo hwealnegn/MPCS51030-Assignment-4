@@ -10,4 +10,6 @@
 
 @interface CircleViewController : UIViewController
 
+@property (strong, nonatomic) NSMutableArray *issueData;
+
 @end
