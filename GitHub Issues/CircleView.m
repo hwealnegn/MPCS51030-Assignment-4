@@ -24,6 +24,29 @@
     CGContextSetLineWidth(ctx, 5);
     CGContextAddArc(ctx, center.x, center.y, 100.0, 0, 2*3.14159265, 0);
     CGContextStrokePath(ctx);
+    
+    CGContextClosePath(ctx);
+    
+    // DRAW RECTANGLE?
+    CGContextBeginPath(ctx);
+    
+    float rectangleWidth = self.openIssues * 100;
+    float rectangleHeight = 100.0;
+    
+    CGContextAddRect(ctx, CGRectMake(center.x-(0.5*rectangleWidth), center.y-(0.5*rectangleHeight), rectangleWidth, rectangleHeight));
+    CGContextSetLineWidth(ctx, 10);
+    CGContextSetRGBStrokeColor(ctx, 0.0, 0.0, 1.0, 1.0);
+    CGContextStrokePath(ctx);
+    
+    NSLog(@"Hello, this is: %ld", (long)self.openIssues);
+}
+
+/*!
+ * @brief Retrieves number of open/closed issues from CircleViewController
+ */
+- (void)retrieveData:(float)x :(float)y {
+    self.openIssues = x;
+    self.closedIssues = y;
 }
 
 @end

@@ -10,4 +10,9 @@
 
 @interface CircleView : UIView
 
+@property NSInteger openIssues;
+@property NSInteger closedIssues;
+
+- (void) retrieveData:(float)x :(float)y;
+
 @end

@@ -215,9 +215,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Status" image="doughnut_chart-50" id="u2Y-dE-l26"/>
                     <connections>
+                        <outlet property="circleView" destination="SBW-JL-7k4" id="Mku-BC-3Mi"/>
                         <outlet property="closedLabel" destination="56v-kQ-kAr" id="dov-BY-mMY"/>
                         <outlet property="openLabel" destination="KEp-5T-N3X" id="S1q-jl-6rb"/>
-                        <outlet property="view" destination="SBW-JL-7k4" id="Kuy-Wh-Hm2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WMb-JH-Fyf" userLabel="First Responder" sceneMemberID="firstResponder"/>

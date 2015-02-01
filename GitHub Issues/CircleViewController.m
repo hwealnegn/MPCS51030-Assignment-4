@@ -11,6 +11,8 @@
 
 @interface CircleViewController ()
 
+@property (strong, nonatomic) IBOutlet CircleView *circleView;
+
 @end
 
 @implementation CircleViewController
@@ -52,6 +54,9 @@
                     // Update labels
                     self.openLabel.text = [NSString stringWithFormat:@"%ld Open Issues", self.openTally];
                     self.closedLabel.text = [NSString stringWithFormat:@"%ld Closed Issues", self.closedTally];
+                    
+                    // Send data from CircleViewController to CircleView
+                    [self.circleView retrieveData: self.openTally :self.closedTally];
                 });
             }] resume];
 }
