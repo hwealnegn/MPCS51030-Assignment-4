@@ -11,5 +11,9 @@
 @interface CircleViewController : UIViewController
 
 @property (strong, nonatomic) NSMutableArray *issueData;
+@property (weak, nonatomic) IBOutlet UILabel *openLabel;
+@property (weak, nonatomic) IBOutlet UILabel *closedLabel;
+@property NSInteger openTally;
+@property NSInteger closedTally;
 
 @end

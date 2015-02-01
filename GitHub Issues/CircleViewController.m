@@ -31,26 +31,49 @@
                                                                  options:NSJSONReadingAllowFragments
                                                                    error:&jsonError];
                 // Log the data for debugging
-                NSLog(@"HIIIDownloadedData:%@",self.issueData);
+                NSLog(@"DownloadedData:%@",self.issueData);
                 
                 // Use dispatch_async to update the table on the main thread
                 // Remember that NSURLSession is downloading in the background
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    //[self.tableView reloadData];
+                    self.openTally = 0;
+                    self.closedTally = 0;
+                    
+                    for (int i=0; i<[self.issueData count]; i++){
+                        if ([[[self.issueData objectAtIndex:i] objectForKey:@"state"] isEqualToString:@"open"]){
+                            self.openTally++;
+                        }
+                        if ([[[self.issueData objectAtIndex:i] objectForKey:@"state"] isEqualToString:@"closed"]){
+                            self.closedTally++;
+                        }
+                    }
+                    
+                    NSLog(@"open tally: %ld", (long)self.openTally);
+                    NSLog(@"closed tally: %ld", (long)self.closedTally);
+                    
+                    self.openLabel.text = [NSString stringWithFormat:@"%ld Open Issues", self.openTally];
+                    self.closedLabel.text = [NSString stringWithFormat:@"%ld Closed Issues", self.closedTally];
                 });
             }] resume];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
+    [self loadData];
     
     self.issueData = [[NSMutableArray alloc] init];
-    [self loadData];
+    
+    //NSLog(@"HELLO HELLO: %@", [[self.issueData objectAtIndex:1] objectForKey:@"state"]);
+    
+    // Write to label in CircleView
     //((CircleView *) self.view).openIssues = @"HELLO";
+    
     // PARSE THROUGH WITH IF/ELSE FOR STATUSES (open/close)
-    ((CircleView *) self.view).openIssues = [NSString stringWithFormat:@"Count: %lu",[self.issueData count]];
-    NSLog(@"IS THIS WORKING??? %lu", [self.issueData count]);
+    //NSLog(@"HOW ABOUT HERE??? %lu", [self.issueData count]);
+    //NSLog(@"HOW ABOUT HERE??? %@", self.issueCount);
+    //((CircleView *) self.view).openIssues = [NSString stringWithFormat:@"Count: %@",self.issueCount];
+    
 }
 
 - (void)didReceiveMemoryWarning {
