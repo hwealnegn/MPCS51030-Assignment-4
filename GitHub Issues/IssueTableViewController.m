@@ -19,8 +19,8 @@
 @implementation IssueTableViewController
 
 - (void)refreshTable {
-    NSLog(@"Refreshed");
-    
+    NSLog(@"Refreshing");
+    [self loadData];
     [self.refreshControl endRefreshing];
 }
 
@@ -148,4 +148,6 @@
     }
 }
 
+- (IBAction)test:(id)sender {
+}
 @end

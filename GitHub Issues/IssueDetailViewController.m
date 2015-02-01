@@ -20,12 +20,12 @@
     self.issueTitle.text = [self.currentIssue objectForKey:@"title"];
     self.author.text = [self.currentIssue valueForKeyPath:@"user.login"];
     self.date.text = [self.currentIssue objectForKey:@"created_at"];
+    self.status.text = [self.currentIssue objectForKey:@"state"];
     
     // References to display user avatar:
     // http://stackoverflow.com/questions/16481166/xcode-string-url-to-image
     // http://stackoverflow.com/questions/6456605/nsstring-to-nsurl
     NSURL *url = [NSURL URLWithString:[self.currentIssue valueForKeyPath:@"user.avatar_url"]];
-    NSLog(@"%@", [self.currentIssue valueForKeyPath:@"user.avatar_url"]);
     NSData *data = [NSData dataWithContentsOfURL: url];
     self.authorImage.image = [UIImage imageWithData: data];
 }
@@ -45,7 +45,9 @@
 }
 */
 
-/*- (IBAction)moreDetails:(id)sender {
-}*/
-
+- (IBAction)openInSafari:(id)sender {
+    // Reference: http://stackoverflow.com/questions/11524805/how-to-open-the-url-in-safari-not-in-webview
+    NSURL *issueURL = [NSURL URLWithString:[self.currentIssue objectForKey:@"html_url"]];
+    [[UIApplication sharedApplication] openURL:issueURL];
+}
 @end
