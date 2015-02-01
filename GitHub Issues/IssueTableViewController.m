@@ -20,8 +20,7 @@
 
 - (void)refreshTable {
     NSLog(@"Refreshing");
-    [self loadData];
-    //[self.tableView reloadData];
+    [self.tableView reloadData];
     [self.refreshControl endRefreshing];
 }
 
@@ -59,9 +58,8 @@
     self.issueData = [[NSMutableArray alloc] init];
     
     // Add UIRefreshControl
-    // Reference: http://stackoverflow.com/questions/12607015/uirefreshcontrol-ios-6-xcode
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
+    [refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
 }
 
