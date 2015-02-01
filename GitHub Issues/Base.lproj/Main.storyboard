@@ -217,6 +217,7 @@
                     <connections>
                         <outlet property="closedLabel" destination="56v-kQ-kAr" id="dov-BY-mMY"/>
                         <outlet property="openLabel" destination="KEp-5T-N3X" id="S1q-jl-6rb"/>
+                        <outlet property="view" destination="SBW-JL-7k4" id="Kuy-Wh-Hm2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WMb-JH-Fyf" userLabel="First Responder" sceneMemberID="firstResponder"/>

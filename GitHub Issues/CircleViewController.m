@@ -39,6 +39,7 @@
                     self.openTally = 0;
                     self.closedTally = 0;
                     
+                    // Tally the number of open/closed issues
                     for (int i=0; i<[self.issueData count]; i++){
                         if ([[[self.issueData objectAtIndex:i] objectForKey:@"state"] isEqualToString:@"open"]){
                             self.openTally++;
@@ -48,9 +49,7 @@
                         }
                     }
                     
-                    NSLog(@"open tally: %ld", (long)self.openTally);
-                    NSLog(@"closed tally: %ld", (long)self.closedTally);
-                    
+                    // Update labels
                     self.openLabel.text = [NSString stringWithFormat:@"%ld Open Issues", self.openTally];
                     self.closedLabel.text = [NSString stringWithFormat:@"%ld Closed Issues", self.closedTally];
                 });
@@ -59,36 +58,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    [self loadData];
-    
     self.issueData = [[NSMutableArray alloc] init];
-    
-    //NSLog(@"HELLO HELLO: %@", [[self.issueData objectAtIndex:1] objectForKey:@"state"]);
-    
-    // Write to label in CircleView
-    //((CircleView *) self.view).openIssues = @"HELLO";
-    
-    // PARSE THROUGH WITH IF/ELSE FOR STATUSES (open/close)
-    //NSLog(@"HOW ABOUT HERE??? %lu", [self.issueData count]);
-    //NSLog(@"HOW ABOUT HERE??? %@", self.issueCount);
-    //((CircleView *) self.view).openIssues = [NSString stringWithFormat:@"Count: %@",self.issueCount];
-    
+    [self loadData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "CircleView.h"
+#import "CircleViewController.h"
 
 @implementation CircleView
 
@@ -23,16 +24,6 @@
     CGContextSetLineWidth(ctx, 5);
     CGContextAddArc(ctx, center.x, center.y, 100.0, 0, 2*3.14159265, 0);
     CGContextStrokePath(ctx);
-    
-    // Add label at center of circle
-    CGFloat labelWidth = 150;
-    CGFloat labelHeight = 150;
-    UILabel *issues = [[UILabel alloc] initWithFrame:CGRectMake(center.x-(labelWidth/2), center.y-(labelHeight/2), labelWidth, labelHeight)];
-    issues.textAlignment = NSTextAlignmentCenter;
-    issues.textColor = [UIColor blackColor];
-    issues.text = self.openIssues;
-    [self addSubview:issues];
 }
-
 
 @end

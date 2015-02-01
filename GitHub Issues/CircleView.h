@@ -10,6 +10,4 @@
 
 @interface CircleView : UIView
 
-@property (strong, nonatomic) NSString *openIssues;
-
 @end
