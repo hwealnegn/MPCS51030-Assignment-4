@@ -14,6 +14,7 @@
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
+    
     // Reference to draw circle: http://www.ioscreator.com/tutorials/drawing-shapes-with-core-graphics
     CGPoint center = CGPointMake(self.frame.size.width / 2.0, self.frame.size.height / 2.0);
     CGContextRef ctx = UIGraphicsGetCurrentContext();
@@ -27,7 +28,10 @@
     
     CGContextClosePath(ctx);
     
-    // DRAW RECTANGLE?
+    // This was my attempt at creating a bar graph that displays the number of open/closed issues.
+    // I was having issues passing the number of open/closed issues from my CircleViewController to CircleView.
+    // I was able to get the values with my method retrieveData (below), and it shows up in my NSLog.
+    // However, self.openIssues/closedIssues = 0 when I use the properties within drawRect.
     /*CGContextBeginPath(ctx);
     
     float rectangleWidth = self.openIssues * 100;
@@ -38,7 +42,7 @@
     CGContextSetRGBStrokeColor(ctx, 0.0, 0.0, 1.0, 1.0);
     CGContextStrokePath(ctx);
     
-    NSLog(@"Hello, this is: %ld", (long)self.openIssues);*/
+    NSLog(@"Hello, this is: %ld", self.openIssues);*/
 }
 
 /*!
@@ -47,6 +51,7 @@
 - (void)retrieveData:(float)x :(float)y {
     self.openIssues = x;
     self.closedIssues = y;
+    NSLog(@"HELLO, %ld", self.openIssues);
 }
 
 @end
