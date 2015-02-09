@@ -1,4 +1,8 @@
 # hwealnegn-MPCS51030-Winter-2015-Assignment-4
-MPCS51030-Winter-2015-Assignment-4 created for hwealnegn
+Grade: 9.5/10
 
-My last update was from Bobby's computer, which was logged into his Git account, which is why my latest commit is from his account.
+- Good job overall! There is a lot of duplicated code - consider extracting common controller logic for Issues to a single superclass.
+
+- A better design would have been to create an "Issue" object to encapsulate logic of title, date, etc.
+
+- It looks like the endpoint you're using for the count is not accurate!
